@@ -1,0 +1,12 @@
+<div style="display:flex; justify-content:space-between"
+    [class]="getClasses(item.onSale)"
+    >
+    <div>
+      <div>{{item.title}}</div>
+      <div>{{item.price | currency}} {{ item.dateAdded | date: 'MM/dd/yyyy': 'UTC'}}</div>
+    </div>
+    <div>
+      <i class="material-icons" *ngIf="!first" (click)="handleUpArrowClick()">expand_less</i>
+      <i class="material-icons" *ngIf="!last" (click)="handleDownArrowClick()">expand_more</i>
+    </div>
+  </div>
